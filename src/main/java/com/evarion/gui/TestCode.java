@@ -1,13 +1,9 @@
 package com.evarion.gui;
 
-
 import javax.swing.*;
 import java.awt.*;
 
-
-public class MainGuiNew1 extends JFrame {
-
-
+public class TestCode extends JFrame {
     JPanel jPanelLeft = new JPanel();
     JPanel jPanelCentre = new JPanel();
     JPanel jPanelRight = new JPanel();
@@ -31,12 +27,10 @@ public class MainGuiNew1 extends JFrame {
     JButton[] buttonsRightsMenu = new JButton[6];
     JButton[] buttonsLeftMenu = new JButton[8];
 
-    public MainGuiNew1() {
+    public TestCode() {
         super("App");
         createGUI();
     }
-    
-
     public void createGUI() {
         //MainPanel.createPanel();
 
@@ -45,11 +39,13 @@ public class MainGuiNew1 extends JFrame {
         setMinimumSize(new Dimension(1800, 900));
 
         addPanel();
-        addButtonOnPanel();
+        //addButton();
+        //addButtonVar2();
+
 
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-    }
 
+    }
 
     public void addPanel() {
 
@@ -125,12 +121,29 @@ public class MainGuiNew1 extends JFrame {
         jPanelDownPanelInfo.setPreferredSize(new Dimension(1400, 80));
         jPanelDownPanelInfo.setBackground(Color.YELLOW);
         add(jPanelDownPanelInfo, constraints1);
+
     }
 
+    public void addButton() {
 
-    public void addButtonOnPanel() {
+        jPanelLeft.setLayout(new GridLayout(8, 2, 7, 10));
+
+        jPanelLeft.add(jPanelLogo);
+        jPanelLeft.add(jButton1);
+        jPanelLeft.add(jButton2);
+        jPanelLeft.add(jButton3);
+        jPanelLeft.add(jButton4);
+        jPanelLeft.add(jButton5);
+        jPanelLeft.add(jButton6);
+        jPanelLeft.add(jButton7);
+
+
+    }
+
+    public void addButtonVar2() {
         jPanelLeft.setLayout(new GridBagLayout());
         GridBagConstraints constraints2 = new GridBagConstraints();
+
         constraints2.anchor = GridBagConstraints.NORTH;
         constraints2.weighty = 0.001;
 
@@ -139,26 +152,47 @@ public class MainGuiNew1 extends JFrame {
         constraints2.gridy = 0;
         jPanelLeft.add(jPanelEmpty, constraints2);
 
+
         jPanelLogo.setPreferredSize(new Dimension(100, 75));
         constraints2.gridx = 0;
         constraints2.gridy = 1;
         jPanelLeft.add(jPanelLogo, constraints2);
 
+        jButton1.setPreferredSize(new Dimension(90, 90));
+        constraints2.gridx = 0;
+        constraints2.gridy = 2;
+        jPanelLeft.add(jButton1, constraints2);
 
-        for (int i = 0; i < buttonsLeftMenu.length; i++) {
-            buttonsLeftMenu[i] = new JButton();
-            buttonsLeftMenu[i].setName("jButtonLeft" + i);
-            buttonsLeftMenu[i].setText("Text");
-            buttonsLeftMenu[i].setPreferredSize(new Dimension(80, 60));
-        }
+        jButton2.setPreferredSize(new Dimension(90, 90));
+        constraints2.gridx = 0;
+        constraints2.gridy = 3;
+        jPanelLeft.add(jButton2, constraints2);
 
-        int numY = 2;
-        for (JButton jButton : buttonsLeftMenu) {
-            constraints2.gridy = numY;
-            constraints2.gridx=0;
-            numY++;
-            jPanelLeft.add(jButton, constraints2);
-        }
+        jButton3.setPreferredSize(new Dimension(90, 90));
+        constraints2.gridx = 0;
+        constraints2.gridy = 4;
+        jPanelLeft.add(jButton3, constraints2);
+
+        jButton4.setPreferredSize(new Dimension(90, 90));
+        constraints2.gridx = 0;
+        constraints2.gridy = 5;
+        jPanelLeft.add(jButton4, constraints2);
+
+        jButton5.setPreferredSize(new Dimension(90, 90));
+        constraints2.gridx = 0;
+        constraints2.gridy = 6;
+        jPanelLeft.add(jButton5, constraints2);
+
+        jButton6.setPreferredSize(new Dimension(90, 90));
+        constraints2.gridx = 0;
+        constraints2.gridy = 7;
+        jPanelLeft.add(jButton6, constraints2);
+
+        jButton7.setPreferredSize(new Dimension(90, 90));
+        constraints2.gridx = 0;
+        constraints2.gridy = 8;
+        jPanelLeft.add(jButton7, constraints2);
+
 
         jPanelCentre.setLayout(new GridBagLayout());
         GridBagConstraints constraints3 = new GridBagConstraints();
@@ -166,9 +200,9 @@ public class MainGuiNew1 extends JFrame {
         constraints3.weightx = 0.001;
 
 
-        for (int i = 0; i < buttonsTopMenu.length; i++) {
+        for (int i = 0; i < 11; i++) {
             buttonsTopMenu[i] = new JButton();
-            buttonsTopMenu[i].setName("JButtonTopCentre" + i);
+            buttonsTopMenu[i].setName("JButton" + i);
             buttonsTopMenu[i].setText("Text");
             buttonsTopMenu[i].setPreferredSize(new Dimension(80, 60));
         }
