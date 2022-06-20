@@ -1,10 +1,9 @@
-package com.evarion.gui;
+package com.evarion.library;
 
+import javax.swing.*;
 import java.awt.*;
-import javax.swing.JButton;
-import javax.swing.JFrame;
 
-public class TestPanel {
+public class TestPanelBackUp {
 
     /**
      * Метод определения интерфейса панели

@@ -1,13 +1,13 @@
 package com.evarion.main;
 
 
-import com.evarion.gui.MainGuiNew1;
+import com.evarion.gui.MainGui;
 
 public class Main {
     public static void main(String[] args) {
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                MainGuiNew1 frame = new MainGuiNew1();
+                MainGui frame = new MainGui();
                 frame.setVisible(true);
             }
         });

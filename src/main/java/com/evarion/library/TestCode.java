@@ -1,4 +1,4 @@
-package com.evarion.gui;
+package com.evarion.library;
 
 import javax.swing.*;
 import java.awt.*;
