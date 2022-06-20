@@ -40,7 +40,6 @@ public class MainGui extends JFrame {
         addButtonOnPanel();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         //setResizable(false);
-
     }
 
 
@@ -52,9 +51,9 @@ public class MainGui extends JFrame {
 
 
         int heightYellowPanel = 80;
-        int magentaHeight = 760;
+        int magentaHeight = 800;
         int widthOrange = 120;
-        int widthMagentaGreen = 1200;
+        int widthMagentaGreen = 1300;
         int widthCyanRedBlue = 500;
         int heightGreenBlue = 100;
         int heightRedCyanGroupPanel = magentaHeight / 2;
@@ -89,7 +88,7 @@ public class MainGui extends JFrame {
         constraints1.gridheight = 2;
         constraints1.gridwidth = 1;
         jPanelData.setPreferredSize(new Dimension(widthMagentaGreen, magentaHeight)); //(new Dimension(1100, 640));
-        jPanelData.setBackground(Color.MAGENTA);
+        jPanelData.setBackground(Color.MAGENTA.darker());
         add(jPanelData, constraints1);
 
         constraints1.weightx = 0;
@@ -107,8 +106,8 @@ public class MainGui extends JFrame {
         jPanel1.setBackground(Color.cyan);
         JPanel jPanel2 = new JPanel();
         jPanel2.setBackground(Color.cyan);
-        jPanel1.setPreferredSize(new Dimension(250, 380));
-        jPanel2.setPreferredSize(new Dimension(250, 380));
+        jPanel1.setPreferredSize(new Dimension(250, 400));
+        jPanel2.setPreferredSize(new Dimension(250, 400));
         JSplitPane oneTest0 = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, jPanel1, jPanel2);
         jPanelRightDataUp.add(oneTest0);
         //===============================================================================
@@ -125,11 +124,11 @@ public class MainGui extends JFrame {
 
         //===============================================================================
         JPanel jPanel3 = new JPanel();
-        jPanel3.setBackground(Color.red);
+        jPanel3.setBackground(Color.red.darker());
         JPanel jPanel4 = new JPanel();
-        jPanel4.setBackground(Color.red);
-        jPanel3.setPreferredSize(new Dimension(250, 380));
-        jPanel4.setPreferredSize(new Dimension(250, 380));
+        jPanel4.setBackground(Color.red.darker());
+        jPanel3.setPreferredSize(new Dimension(250, 400));
+        jPanel4.setPreferredSize(new Dimension(250, 400));
         JSplitPane oneTest1 = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, jPanel3, jPanel4);
         jPanelRightDataDown.add(oneTest1);
         //===============================================================================
