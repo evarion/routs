@@ -1,6 +1,5 @@
 package com.evarion.gui;
 
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -59,6 +58,7 @@ public class MainGuiNew1 extends JFrame {
         int heightRedCyanGroupPanel = magentaHeight/2;
         int heightOrange = magentaHeight+heightYellowPanel+heightGreenBlue;
         int widthYellow=widthMagentaGreen+widthCyanRedBlue;
+
 
 
         constraints1.weightx = 0;
