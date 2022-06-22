@@ -13,6 +13,14 @@ public class MainGui extends JFrame {
     JPanel jPanelRightDataUp = new JPanel();
     JPanel jPanelRightDataDown = new JPanel();
     JPanel jPanelDownPanelInfo = new JPanel();
+    JPanel jPanelDataTable = new JPanel();
+    JPanel jPanelDataTableSubRight = new JPanel();
+
+    JPanel dataUpRight = new JPanel();
+    JPanel dataUpLeft = new JPanel();
+    JPanel dataDownRight = new JPanel();
+    JPanel dataDownLeft = new JPanel();
+
 
     JPanel jPanelLogo = new JPanel();
 
@@ -44,11 +52,8 @@ public class MainGui extends JFrame {
 
 
     public void addPanel() {
-
-
         setLayout(new GridBagLayout());
         GridBagConstraints constraints1 = new GridBagConstraints();
-
 
         int heightYellowPanel = 80;
         int magentaHeight = 800;
@@ -56,103 +61,91 @@ public class MainGui extends JFrame {
         int widthMagentaGreen = 1300;
         int widthCyanRedBlue = 500;
         int heightGreenBlue = 100;
-        int heightRedCyanGroupPanel = magentaHeight / 2;
         int heightOrange = magentaHeight + heightYellowPanel + heightGreenBlue;
         int widthYellow = widthMagentaGreen + widthCyanRedBlue;
 
 
-        constraints1.weightx = 0;
-        constraints1.weighty = 0;
         constraints1.gridx = 0;
         constraints1.gridy = 0;
         constraints1.gridheight = 5;
         constraints1.gridwidth = 1;
-        jPanelLeft.setPreferredSize(new Dimension(widthOrange, heightOrange)); //(new Dimension(120, 820));
+        jPanelLeft.setPreferredSize(new Dimension(widthOrange, heightOrange));
         jPanelLeft.setBackground(Color.ORANGE);
         add(jPanelLeft, constraints1);
 
-        constraints1.weightx = 0;
-        constraints1.weighty = 0;
+
         constraints1.gridx = 1;
         constraints1.gridy = 0;
         constraints1.gridheight = 1;
         constraints1.gridwidth = 1;
-        jPanelCentre.setPreferredSize(new Dimension(widthMagentaGreen, heightGreenBlue)); //(new Dimension(1100, 100));
+        jPanelCentre.setPreferredSize(new Dimension(widthMagentaGreen, heightGreenBlue));
         jPanelCentre.setBackground(Color.green);
         add(jPanelCentre, constraints1);
 
-        constraints1.weightx = 0;
-        constraints1.weighty = 0;
+
         constraints1.gridx = 1;
         constraints1.gridy = 2;
         constraints1.gridheight = 2;
-        constraints1.gridwidth = 1;
-        jPanelData.setPreferredSize(new Dimension(widthMagentaGreen, magentaHeight)); //(new Dimension(1100, 640));
+        constraints1.gridwidth = 2;
+        jPanelData.setPreferredSize(new Dimension(widthYellow, magentaHeight));
         jPanelData.setBackground(Color.MAGENTA.darker());
         add(jPanelData, constraints1);
 
-        constraints1.weightx = 0;
-        constraints1.weighty = 0;
+
         constraints1.gridx = 2;
         constraints1.gridy = 0;
         constraints1.gridheight = 1;
         constraints1.gridwidth = 1;
-        jPanelRight.setPreferredSize(new Dimension(widthCyanRedBlue, heightGreenBlue)); //(new Dimension(300, 100));
+        jPanelRight.setPreferredSize(new Dimension(widthCyanRedBlue, heightGreenBlue));
         jPanelRight.setBackground(Color.BLUE);
         add(jPanelRight, constraints1);
 
-        //===============================================================================
-        JPanel jPanel1 = new JPanel();
-        jPanel1.setBackground(Color.cyan);
-        JPanel jPanel2 = new JPanel();
-        jPanel2.setBackground(Color.cyan);
-        jPanel1.setPreferredSize(new Dimension(250, 400));
-        jPanel2.setPreferredSize(new Dimension(250, 400));
-        JSplitPane oneTest0 = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, jPanel1, jPanel2);
+        jPanelDataTable.setBackground(Color.LIGHT_GRAY);
+        jPanelDataTableSubRight.setBackground(Color.GRAY);
+        jPanelDataTable.setPreferredSize(new Dimension(1300, 800));
+        jPanelDataTableSubRight.setPreferredSize(new Dimension(500, 800));
+        JSplitPane splitPaneData = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, jPanelDataTable, jPanelDataTableSubRight);
+        jPanelData.add(splitPaneData);
+
+
+        dataUpRight.setBackground(Color.cyan);
+        dataUpLeft.setBackground(Color.cyan);
+        dataUpRight.setPreferredSize(new Dimension(235, 700));
+        dataUpLeft.setPreferredSize(new Dimension(235, 700));
+        JSplitPane oneTest0 = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, dataUpRight, dataUpLeft);
         jPanelRightDataUp.add(oneTest0);
-        //===============================================================================
 
-        constraints1.weightx = 0;
-        constraints1.weighty = 0;
-        constraints1.gridx = 2;
-        constraints1.gridy = 2;
-        constraints1.gridheight = 1;
-        constraints1.gridwidth = 1;
-        jPanelRightDataUp.setPreferredSize(new Dimension(widthCyanRedBlue, heightRedCyanGroupPanel)); //(new Dimension(300, 320));
-        jPanelRightDataUp.setBackground(Color.cyan);
-        add(jPanelRightDataUp, constraints1);
 
-        //===============================================================================
-        JPanel jPanel3 = new JPanel();
-        jPanel3.setBackground(Color.red.darker());
-        JPanel jPanel4 = new JPanel();
-        jPanel4.setBackground(Color.red.darker());
-        jPanel3.setPreferredSize(new Dimension(250, 400));
-        jPanel4.setPreferredSize(new Dimension(250, 400));
-        JSplitPane oneTest1 = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, jPanel3, jPanel4);
+        dataDownRight.setBackground(Color.red.darker());
+        dataDownLeft.setBackground(Color.red.darker());
+        dataDownRight.setPreferredSize(new Dimension(235, 700));
+        dataDownLeft.setPreferredSize(new Dimension(235, 700));
+
+        JSplitPane oneTest1 = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, dataDownRight, dataDownLeft);
         jPanelRightDataDown.add(oneTest1);
-        //===============================================================================
 
-        constraints1.weightx = 0;
-        constraints1.weighty = 0;
-        constraints1.gridx = 2;
-        constraints1.gridy = 3;
-        constraints1.gridheight = 1;
-        constraints1.gridwidth = 1;
-        jPanelRightDataDown.setPreferredSize(new Dimension(widthCyanRedBlue, heightRedCyanGroupPanel)); //(new Dimension(300, 320));
-        jPanelRightDataDown.setBackground(Color.RED);
-        add(jPanelRightDataDown, constraints1);
+/*
+        JSplitPane rightDataSubTable = new JSplitPane(JSplitPane.VERTICAL_SPLIT, jPanelRightDataUp, jPanelRightDataDown);
+        jPanelDataTableSubRight.add(rightDataSubTable);
+        rightDataSubTable.setDividerLocation(360);
+*/
 
+        JSplitPane rightDataSub = splitPanelVertical(jPanelRightDataUp,jPanelRightDataDown,360);
+        jPanelDataTableSubRight.add(rightDataSub);
 
-        constraints1.weightx = 0;
-        constraints1.weighty = 0;
         constraints1.gridx = 1;
         constraints1.gridy = 4;
         constraints1.gridheight = 0;
         constraints1.gridwidth = 2;
-        jPanelDownPanelInfo.setPreferredSize(new Dimension(widthYellow, heightYellowPanel)); //(new Dimension(1400, 80));
+        jPanelDownPanelInfo.setPreferredSize(new Dimension(widthYellow, 80));
         jPanelDownPanelInfo.setBackground(Color.YELLOW);
         add(jPanelDownPanelInfo, constraints1);
+    }
+
+    public JSplitPane splitPanelVertical(JPanel jPane1, JPanel jPanel2,int dividerLocation) {
+        JSplitPane jSplitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, jPane1, jPanel2);
+        jSplitPane.setDividerLocation(dividerLocation);
+        return jSplitPane;
     }
 
 
@@ -223,5 +216,7 @@ public class MainGui extends JFrame {
         for (JButton jButton : buttonsRightsMenu) {
             jPanelRight.add(jButton, constraints4);
         }
+
+
     }
 }
