@@ -1,6 +1,7 @@
 package com.evarion.gui;
 
 import javax.swing.*;
+import javax.swing.plaf.DimensionUIResource;
 import java.awt.*;
 
 public class MainGui2 extends JFrame {
@@ -50,6 +51,7 @@ public class MainGui2 extends JFrame {
         constraints.gridwidth = 1;
         constraints.gridheight = 3;
         menuLeftJP0.setPreferredSize(new Dimension(120, 960));
+
         menuLeftJP0.setBackground(Color.ORANGE);
         add(menuLeftJP0, constraints);
 
