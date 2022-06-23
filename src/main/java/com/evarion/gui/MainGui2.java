@@ -1,13 +1,11 @@
 package com.evarion.gui;
 
 import javax.swing.*;
-
 import java.awt.*;
 
 public class MainGui2 extends JFrame {
 
     JPanel menuLeftJP0 = new JPanel();
-
     JPanel menuTopJP0 = new JPanel();
     JPanel dataCentreJP0 = new JPanel();
     JPanel menuDownInfoJP0 = new JPanel();
@@ -27,7 +25,6 @@ public class MainGui2 extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocation(50, 40);
         setMinimumSize(new Dimension(800, 600));
-
 
         createMainPanel();
         createDataPanel();
@@ -66,7 +63,7 @@ public class MainGui2 extends JFrame {
         constraints.gridheight = 1;
         constraints.weightx = 0.8;
         constraints.weighty = 0.7;//dataCentreJP0.setPreferredSize(new Dimension(1800, 920));
-        dataCentreJP0.setBackground(Color.MAGENTA);
+        dataCentreJP0.setBackground(Color.GRAY.brighter());
         add(dataCentreJP0, constraints);
 
         constraints.gridx = 1;
@@ -89,7 +86,6 @@ public class MainGui2 extends JFrame {
         logo.setBorder(BorderFactory.createEmptyBorder(35, 0, 0, 0));
         jPanelLogo.setPreferredSize(new Dimension(100, 70));
         jPanelLogo.setMinimumSize(new Dimension(100,70));
-
 
         constraints.gridx = 0;
         constraints.gridy = 1;

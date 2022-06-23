@@ -3,7 +3,7 @@ package com.evarion.library;
 import javax.swing.*;
 import java.awt.*;
 
-public class NewGui {
+public class NewGui0 {
 
 
 
