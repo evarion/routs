@@ -1,7 +1,7 @@
 package com.evarion.gui;
 
 import javax.swing.*;
-import javax.swing.plaf.DimensionUIResource;
+
 import java.awt.*;
 
 public class MainGui2 extends JFrame {
@@ -15,6 +15,7 @@ public class MainGui2 extends JFrame {
     JLabel logo = new JLabel("LOGO");
 
     JButton[] buttonsLeftMenu = new JButton[8];
+
 
     public MainGui2() {
         super("App2");
@@ -35,22 +36,25 @@ public class MainGui2 extends JFrame {
     }
 
     public void createMainPanel() {
+
+
         setLayout(new GridBagLayout());
         GridBagConstraints constraints = new GridBagConstraints();
 
-        constraints.gridx=0;
-        constraints.gridy=0;
-        constraints.gridwidth=3;
-        constraints.gridheight=1;
-        menuTopJP0.setPreferredSize(new Dimension(1920,40));
+        constraints.gridx = 0;
+        constraints.gridy = 0;
+        constraints.gridwidth = 3;
+        constraints.gridheight = 1;
+        menuTopJP0.setPreferredSize(new Dimension(1920, 40));
         menuTopJP0.setBackground(Color.GRAY);
-        add(menuTopJP0,constraints);
+        add(menuTopJP0, constraints);
 
         constraints.gridx = 0;
         constraints.gridy = 1;
         constraints.gridwidth = 1;
         constraints.gridheight = 3;
         menuLeftJP0.setPreferredSize(new Dimension(120, 960));
+
 
         menuLeftJP0.setBackground(Color.ORANGE);
         add(menuLeftJP0, constraints);
@@ -72,7 +76,7 @@ public class MainGui2 extends JFrame {
         add(menuDownInfoJP0, constraints);
     }
 
-    public void createLeftButtonPanel(){
+    public void createLeftButtonPanel() {
         menuLeftJP0.setLayout(new GridBagLayout());
         GridBagConstraints constraints = new GridBagConstraints();
         constraints.anchor = GridBagConstraints.NORTH;
@@ -81,6 +85,7 @@ public class MainGui2 extends JFrame {
 
         logo.setBorder(BorderFactory.createEmptyBorder(35, 0, 0, 0));
         jPanelLogo.setPreferredSize(new Dimension(100, 70));
+
 
         constraints.gridx = 0;
         constraints.gridy = 1;
@@ -112,3 +117,7 @@ public class MainGui2 extends JFrame {
 
     }
 }
+
+
+
+
