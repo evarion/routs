@@ -7,6 +7,7 @@ import java.awt.*;
 public class MainGui2 extends JFrame {
 
     JPanel menuLeftJP0 = new JPanel();
+
     JPanel menuTopJP0 = new JPanel();
     JPanel dataCentreJP0 = new JPanel();
     JPanel menuDownInfoJP0 = new JPanel();
@@ -25,7 +26,8 @@ public class MainGui2 extends JFrame {
     public void createGUI() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocation(50, 40);
-        setMinimumSize(new Dimension(1950, 1050));
+        setMinimumSize(new Dimension(800, 600));
+
 
         createMainPanel();
         createDataPanel();
@@ -36,16 +38,16 @@ public class MainGui2 extends JFrame {
     }
 
     public void createMainPanel() {
-
-
         setLayout(new GridBagLayout());
         GridBagConstraints constraints = new GridBagConstraints();
+        constraints.fill = GridBagConstraints.BOTH;
 
         constraints.gridx = 0;
         constraints.gridy = 0;
         constraints.gridwidth = 3;
         constraints.gridheight = 1;
-        menuTopJP0.setPreferredSize(new Dimension(1920, 40));
+        constraints.weightx = 1.0;
+        constraints.weighty = 0.1;//menuTopJP0.setPreferredSize(new Dimension(1920, 40));
         menuTopJP0.setBackground(Color.GRAY);
         add(menuTopJP0, constraints);
 
@@ -53,9 +55,8 @@ public class MainGui2 extends JFrame {
         constraints.gridy = 1;
         constraints.gridwidth = 1;
         constraints.gridheight = 3;
-        menuLeftJP0.setPreferredSize(new Dimension(120, 960));
-
-
+        constraints.weightx = 0.02;
+        constraints.weighty = 0.9;  //menuLeftJP0.setPreferredSize(new Dimension(120, 960));
         menuLeftJP0.setBackground(Color.ORANGE);
         add(menuLeftJP0, constraints);
 
@@ -63,7 +64,8 @@ public class MainGui2 extends JFrame {
         constraints.gridy = 2;
         constraints.gridwidth = 1;
         constraints.gridheight = 1;
-        dataCentreJP0.setPreferredSize(new Dimension(1800, 920));
+        constraints.weightx = 0.8;
+        constraints.weighty = 0.7;//dataCentreJP0.setPreferredSize(new Dimension(1800, 920));
         dataCentreJP0.setBackground(Color.MAGENTA);
         add(dataCentreJP0, constraints);
 
@@ -71,7 +73,8 @@ public class MainGui2 extends JFrame {
         constraints.gridy = 3;
         constraints.gridwidth = 2;
         constraints.gridheight = 1;
-        menuDownInfoJP0.setPreferredSize(new Dimension(1800, 40));
+        constraints.weightx = 1.0;
+        constraints.weighty = 0.03;//menuDownInfoJP0.setPreferredSize(new Dimension(1800, 40));
         menuDownInfoJP0.setBackground(Color.GRAY);
         add(menuDownInfoJP0, constraints);
     }
@@ -85,6 +88,7 @@ public class MainGui2 extends JFrame {
 
         logo.setBorder(BorderFactory.createEmptyBorder(35, 0, 0, 0));
         jPanelLogo.setPreferredSize(new Dimension(100, 70));
+        jPanelLogo.setMinimumSize(new Dimension(100,70));
 
 
         constraints.gridx = 0;
@@ -98,6 +102,7 @@ public class MainGui2 extends JFrame {
             buttonsLeftMenu[i].setName("jButtonLeft" + i);
             buttonsLeftMenu[i].setText("Text");
             buttonsLeftMenu[i].setPreferredSize(new Dimension(100, 60));
+            buttonsLeftMenu[i].setMinimumSize(new Dimension(60,20));
         }
 
         int numY = 2;
