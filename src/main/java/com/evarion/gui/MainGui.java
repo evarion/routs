@@ -3,6 +3,7 @@ package com.evarion.gui;
 import javax.swing.*;
 import java.awt.*;
 
+
 public class MainGui extends JFrame {
 
     JPanel menuLeftJP0 = new JPanel();
@@ -14,6 +15,7 @@ public class MainGui extends JFrame {
     JLabel logo = new JLabel("LOGO");
 
     JButton[] buttonsLeftMenu = new JButton[8];
+    JButton[] buttonsTopMenu = new JButton[24];
 
 
     public MainGui() {
@@ -30,6 +32,7 @@ public class MainGui extends JFrame {
         createDataPanel();
         createRightDataPanel();
         createLeftButtonPanel();
+        createTopButtonPanel();
 
         setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
@@ -85,7 +88,7 @@ public class MainGui extends JFrame {
 
         logo.setBorder(BorderFactory.createEmptyBorder(35, 0, 0, 0));
         jPanelLogo.setPreferredSize(new Dimension(100, 70));
-        jPanelLogo.setMinimumSize(new Dimension(100,70));
+        jPanelLogo.setMinimumSize(new Dimension(100, 70));
 
         constraints.gridx = 0;
         constraints.gridy = 1;
@@ -98,7 +101,7 @@ public class MainGui extends JFrame {
             buttonsLeftMenu[i].setName("jButtonLeft" + i);
             buttonsLeftMenu[i].setText("Text");
             buttonsLeftMenu[i].setPreferredSize(new Dimension(100, 60));
-            buttonsLeftMenu[i].setMinimumSize(new Dimension(60,20));
+            buttonsLeftMenu[i].setMinimumSize(new Dimension(60, 20));
         }
 
         int numY = 2;
@@ -116,6 +119,35 @@ public class MainGui extends JFrame {
 
     public void createRightDataPanel() {
 
+    }
+
+    public void createTopButtonPanel() {
+        menuTopJP0.setLayout(new GridBagLayout());
+        GridBagConstraints constraints = new GridBagConstraints();
+        JPanel jPanelEmpty = new JPanel();
+        constraints.anchor = GridBagConstraints.WEST;
+    
+        for (int i = 0; i < buttonsTopMenu.length; i++) {
+            buttonsTopMenu[i] = new JButton();
+            buttonsTopMenu[i].setName("jButtonTop" + i);
+            buttonsTopMenu[i].setPreferredSize(new Dimension(20, 20));
+            buttonsTopMenu[i].setMinimumSize(new Dimension(20,20));
+
+        }
+
+        int gridX = 0;
+        for (JButton jButton : buttonsTopMenu) {
+
+            constraints.gridx = gridX;
+            constraints.gridwidth = 1;
+            constraints.gridy=0;
+            constraints.insets.left=5;
+            constraints.insets.right=5;
+            gridX = gridX + 1;
+            menuTopJP0.add(jButton, constraints);
+        }
+        constraints.weightx = 0.7;
+        menuTopJP0.add(jPanelEmpty,constraints);
     }
 }
 
