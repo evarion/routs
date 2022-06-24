@@ -126,7 +126,7 @@ public class MainGui extends JFrame {
         GridBagConstraints constraints = new GridBagConstraints();
         JPanel jPanelEmpty = new JPanel();
         constraints.anchor = GridBagConstraints.WEST;
-    
+
         for (int i = 0; i < buttonsTopMenu.length; i++) {
             buttonsTopMenu[i] = new JButton();
             buttonsTopMenu[i].setName("jButtonTop" + i);
