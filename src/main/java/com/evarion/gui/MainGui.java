@@ -15,7 +15,7 @@ public class MainGui extends JFrame {
     JLabel logo = new JLabel("LOGO");
 
     JButton[] buttonsLeftMenu = new JButton[8];
-    JButton[] buttonsTopMenu = new JButton[24];
+    JButton[] buttonsTopMenu = new JButton[25];
 
 
     public MainGui() {
@@ -85,6 +85,7 @@ public class MainGui extends JFrame {
         constraints.anchor = GridBagConstraints.NORTH;
         constraints.weighty = 0.001;
         constraints.ipady = 30;
+        constraints.insets.top=10;
 
         logo.setBorder(BorderFactory.createEmptyBorder(35, 0, 0, 0));
         jPanelLogo.setPreferredSize(new Dimension(100, 70));
@@ -95,6 +96,7 @@ public class MainGui extends JFrame {
 
         jPanelLogo.add(logo);
         menuLeftJP0.add(jPanelLogo, constraints);
+        constraints.insets.top=2;
 
         for (int i = 0; i < buttonsLeftMenu.length; i++) {
             buttonsLeftMenu[i] = new JButton();
@@ -131,23 +133,32 @@ public class MainGui extends JFrame {
             buttonsTopMenu[i] = new JButton();
             buttonsTopMenu[i].setName("jButtonTop" + i);
             buttonsTopMenu[i].setPreferredSize(new Dimension(20, 20));
-            buttonsTopMenu[i].setMinimumSize(new Dimension(20,20));
+            buttonsTopMenu[i].setMinimumSize(new Dimension(20, 20));
 
         }
 
         int gridX = 0;
+        int count = 1;
         for (JButton jButton : buttonsTopMenu) {
 
             constraints.gridx = gridX;
             constraints.gridwidth = 1;
-            constraints.gridy=0;
-            constraints.insets.left=5;
-            constraints.insets.right=5;
+            constraints.gridy = 0;
+            if (count <= 4) {
+                constraints.insets.left = 5;
+                constraints.insets.right = 5;
+                count++;
+            }
+            else {
+                constraints.insets.right = 15;
+                count=1;
+            }
+
             gridX = gridX + 1;
             menuTopJP0.add(jButton, constraints);
         }
         constraints.weightx = 0.7;
-        menuTopJP0.add(jPanelEmpty,constraints);
+        menuTopJP0.add(jPanelEmpty, constraints);
     }
 }
 
