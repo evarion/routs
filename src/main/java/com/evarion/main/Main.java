@@ -10,7 +10,5 @@ public class Main {
                 frame2.setVisible(true);
             }
         });
-
-
     }
 }
