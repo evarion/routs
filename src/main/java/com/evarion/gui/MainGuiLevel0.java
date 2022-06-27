@@ -1,13 +1,12 @@
 package com.evarion.gui;
 
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-public class MainGui extends JFrame {
+public class MainGuiLevel0 extends JFrame {
 
     JPanel mainPanel = new JPanel();
 
@@ -21,10 +20,10 @@ public class MainGui extends JFrame {
 
     JButton[] buttonsLeftMenu = new JButton[8];
     JButton[] buttonsTopMenu = new JButton[25];
-    MainDataGui dataPanel = new MainDataGui(); //???
+    MainDataGuiLevel1 dataPanel = new MainDataGuiLevel1(); //???
     int control = 1;
 
-    public MainGui() {
+    public MainGuiLevel0() {
         super("App2");
         createGUI();
     }
@@ -160,7 +159,8 @@ public class MainGui extends JFrame {
         constraints.weightx = 0.7;
         menuTopJP0.add(jPanelEmpty, constraints);
     }
-    public void createDataPanel(){
+
+    public void createDataPanel() {
         dataPanel.createDataVar0(dataCentreJP0);
     }
 
