@@ -16,6 +16,7 @@ public class MainGui extends JFrame {
 
     JButton[] buttonsLeftMenu = new JButton[8];
     JButton[] buttonsTopMenu = new JButton[25];
+    MainData dataPanel = new MainData(); //???
 
 
     public MainGui() {
@@ -30,7 +31,6 @@ public class MainGui extends JFrame {
 
         createMainPanel();
         createDataPanel();
-        createRightDataPanel();
         createLeftButtonPanel();
         createTopButtonPanel();
 
@@ -77,6 +77,8 @@ public class MainGui extends JFrame {
         constraints.weighty = 0.03;//menuDownInfoJP0.setPreferredSize(new Dimension(1800, 40));
         menuDownInfoJP0.setBackground(Color.GRAY);
         add(menuDownInfoJP0, constraints);
+
+
     }
 
     public void createLeftButtonPanel() {
@@ -85,7 +87,7 @@ public class MainGui extends JFrame {
         constraints.anchor = GridBagConstraints.NORTH;
         constraints.weighty = 0.001;
         constraints.ipady = 30;
-        constraints.insets.top=10;
+        constraints.insets.top = 10;
 
         logo.setBorder(BorderFactory.createEmptyBorder(35, 0, 0, 0));
         jPanelLogo.setPreferredSize(new Dimension(100, 70));
@@ -96,7 +98,7 @@ public class MainGui extends JFrame {
 
         jPanelLogo.add(logo);
         menuLeftJP0.add(jPanelLogo, constraints);
-        constraints.insets.top=2;
+        constraints.insets.top = 2;
 
         for (int i = 0; i < buttonsLeftMenu.length; i++) {
             buttonsLeftMenu[i] = new JButton();
@@ -115,13 +117,16 @@ public class MainGui extends JFrame {
         }
     }
 
+    int control = 1;
+
     public void createDataPanel() {
-
+        if (control == 0) {
+            dataPanel.createDataVar0(dataCentreJP0);
+        } else {
+            dataPanel.createDataVar1(dataCentreJP0);
+        }
     }
 
-    public void createRightDataPanel() {
-
-    }
 
     public void createTopButtonPanel() {
         menuTopJP0.setLayout(new GridBagLayout());
@@ -148,10 +153,9 @@ public class MainGui extends JFrame {
                 constraints.insets.left = 5;
                 constraints.insets.right = 5;
                 count++;
-            }
-            else {
+            } else {
                 constraints.insets.right = 15;
-                count=1;
+                count = 1;
             }
 
             gridX = gridX + 1;
