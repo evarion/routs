@@ -137,7 +137,7 @@ public class MainGui extends JFrame {
             buttonsTopMenu[i].setMinimumSize(new Dimension(20, 20));
         }
         buttonsTopMenu[24].addActionListener(new ChangeEventAction());
-
+        buttonsTopMenu[24].setToolTipText("Показать/Скрыть окно");
         int gridX = 0;
         int count = 1;
         for (JButton jButton : buttonsTopMenu) {

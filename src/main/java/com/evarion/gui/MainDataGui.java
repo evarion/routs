@@ -8,7 +8,6 @@ public class MainDataGui extends JFrame {
     JPanel rightData = new JPanel();
     JPanel leftData = new JPanel();
 
-
     public void createDataVar0(JPanel jPanel){
         mainData.remove(leftData);
         mainData.remove(rightData);
@@ -29,11 +28,7 @@ public class MainDataGui extends JFrame {
         constraints.gridy = 0;
         constraints.weightx = 1.0;
         constraints.weighty = 1.0;
-
         jPanel.add(mainData, constraints);
-
-
-
     }
 
     public void createDataVar1(JPanel jPanel) {
@@ -62,6 +57,5 @@ public class MainDataGui extends JFrame {
         constraints.weightx = 1.0;
         constraints.weighty = 1.0;
         jPanel.add(mainData, constraints);
-
     }
 }
