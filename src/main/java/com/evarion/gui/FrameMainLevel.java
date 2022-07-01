@@ -172,6 +172,7 @@ public class FrameMainLevel extends JFrame {
 
     public void createDataPanel() {
         dataPanel.createDataVar0(dataCentreJP0);
+
     }
 }
 
