@@ -82,6 +82,10 @@ public class MainDataGuiLevel1 extends JFrame {
         constraints.weighty = 0.97;
         leftData.add(leftDataField, constraints);
 
+    }
+
+    public void createDataVar3Split() {
+
 
     }
 }

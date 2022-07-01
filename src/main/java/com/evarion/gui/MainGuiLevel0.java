@@ -2,17 +2,15 @@ package com.evarion.gui;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 
 public class MainGuiLevel0 extends JFrame {
 
-    JPanel mainPanel = new JPanel();
+    static JPanel mainPanel = new JPanel();
 
     JPanel menuLeftJP0 = new JPanel();
     JPanel menuTopJP0 = new JPanel();
-    JPanel dataCentreJP0 = new JPanel();
+    static JPanel dataCentreJP0 = new JPanel();
     JPanel menuDownInfoJP0 = new JPanel();
 
     JPanel jPanelLogo = new JPanel();
@@ -20,8 +18,8 @@ public class MainGuiLevel0 extends JFrame {
 
     JButton[] buttonsLeftMenu = new JButton[8];
     JButton[] buttonsTopMenu = new JButton[25];
-    MainDataGuiLevel1 dataPanel = new MainDataGuiLevel1(); //???
-    int control = 1;
+    static MainDataGuiLevel1 dataPanel = new MainDataGuiLevel1(); //???
+    static int control = 1;
 
     public MainGuiLevel0() {
         super("App2");
@@ -52,7 +50,7 @@ public class MainGuiLevel0 extends JFrame {
         constraints.gridwidth = 3;
         constraints.gridheight = 1;
         constraints.weightx = 1.0;
-        constraints.weighty = 0.1;//menuTopJP0.setPreferredSize(new Dimension(1920, 40));
+        constraints.weighty = 0.1;
         menuTopJP0.setBackground(Color.GRAY);
         mainPanel.add(menuTopJP0, constraints);
 
@@ -61,7 +59,7 @@ public class MainGuiLevel0 extends JFrame {
         constraints.gridwidth = 1;
         constraints.gridheight = 3;
         constraints.weightx = 0.02;
-        constraints.weighty = 0.9;  //menuLeftJP0.setPreferredSize(new Dimension(120, 960));
+        constraints.weighty = 0.9;
         menuLeftJP0.setBackground(Color.ORANGE);
         mainPanel.add(menuLeftJP0, constraints);
 
@@ -70,7 +68,7 @@ public class MainGuiLevel0 extends JFrame {
         constraints.gridwidth = 1;
         constraints.gridheight = 1;
         constraints.weightx = 0.8;
-        constraints.weighty = 0.7;//dataCentreJP0.setPreferredSize(new Dimension(1800, 920));
+        constraints.weighty = 0.7;
         dataCentreJP0.setBackground(Color.GRAY.brighter());
         mainPanel.add(dataCentreJP0, constraints);
 
@@ -79,7 +77,7 @@ public class MainGuiLevel0 extends JFrame {
         constraints.gridwidth = 2;
         constraints.gridheight = 1;
         constraints.weightx = 1.0;
-        constraints.weighty = 0.03;//menuDownInfoJP0.setPreferredSize(new Dimension(1800, 40));
+        constraints.weighty = 0.03;
         menuDownInfoJP0.setBackground(Color.GRAY);
         mainPanel.add(menuDownInfoJP0, constraints);
 
@@ -134,9 +132,10 @@ public class MainGuiLevel0 extends JFrame {
             buttonsTopMenu[i].setName("jButtonTop" + i);
             buttonsTopMenu[i].setPreferredSize(new Dimension(20, 20));
             buttonsTopMenu[i].setMinimumSize(new Dimension(20, 20));
+            actionsButtonsTopPanel(i);
         }
-        buttonsTopMenu[24].addActionListener(new ChangeEventAction());
-        buttonsTopMenu[24].setToolTipText("Показать/Скрыть окно");
+
+
         int gridX = 0;
         int count = 1;
         for (JButton jButton : buttonsTopMenu) {
@@ -160,24 +159,19 @@ public class MainGuiLevel0 extends JFrame {
         menuTopJP0.add(jPanelEmpty, constraints);
     }
 
-    public void createDataPanel() {
-        dataPanel.createDataVar0(dataCentreJP0);
+    public void actionsButtonsTopPanel( int numButton) {
+        switch (numButton) {
+            case 24:
+                buttonsTopMenu[24].addActionListener(new ActionButtonListeners.ChangeEventActionFromAction());
+                buttonsTopMenu[24].setToolTipText("Показать/Скрыть окно");
+                break;
+            case 0:
+                buttonsTopMenu[0].addActionListener(new ActionButtonListeners.TestButtonFromAction());
+        }
     }
 
-    class ChangeEventAction implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if (control == 0) {
-                dataPanel.createDataVar0(dataCentreJP0);
-                control = 1;
-
-            } else {
-                dataPanel.createDataVar1(dataCentreJP0);
-                control = 0;
-                System.out.println(control);
-            }
-            mainPanel.updateUI();
-        }
+    public void createDataPanel() {
+        dataPanel.createDataVar0(dataCentreJP0);
     }
 }
 
