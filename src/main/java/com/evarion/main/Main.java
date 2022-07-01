@@ -1,12 +1,12 @@
 package com.evarion.main;
 
-import com.evarion.gui.MainGuiLevel0;
+import com.evarion.gui.FrameMainLevel;
 
 public class Main {
     public static void main(String[] args) {
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                MainGuiLevel0 frame2 = new MainGuiLevel0();
+                FrameMainLevel frame2 = new FrameMainLevel();
                 frame2.setVisible(true);
             }
         });

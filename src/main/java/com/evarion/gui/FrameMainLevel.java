@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 
-public class MainGuiLevel0 extends JFrame {
+public class FrameMainLevel extends JFrame {
 
     static JPanel mainPanel = new JPanel();
 
@@ -18,10 +18,10 @@ public class MainGuiLevel0 extends JFrame {
 
     JButton[] buttonsLeftMenu = new JButton[8];
     JButton[] buttonsTopMenu = new JButton[25];
-    static MainDataGuiLevel1 dataPanel = new MainDataGuiLevel1(); //???
+    static FrameDataLevel dataPanel = new FrameDataLevel(); //???
     static int control = 1;
 
-    public MainGuiLevel0() {
+    public FrameMainLevel() {
         super("App2");
         createGUI();
     }

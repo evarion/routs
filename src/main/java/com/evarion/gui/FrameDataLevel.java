@@ -3,7 +3,7 @@ package com.evarion.gui;
 import javax.swing.*;
 import java.awt.*;
 
-public class MainDataGuiLevel1 extends JFrame {
+public class FrameDataLevel extends JFrame {
     JPanel mainData = new JPanel();
     JPanel rightData = new JPanel();
     JPanel leftData = new JPanel();

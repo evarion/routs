@@ -8,16 +8,16 @@ public class ActionButtonListeners {
     static class ChangeEventActionFromAction implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            if (MainGuiLevel0.control == 0) {
-                MainGuiLevel0.dataPanel.createDataVar0(MainGuiLevel0.dataCentreJP0);
-                MainGuiLevel0.control = 1;
+            if (FrameMainLevel.control == 0) {
+                FrameMainLevel.dataPanel.createDataVar0(FrameMainLevel.dataCentreJP0);
+                FrameMainLevel.control = 1;
 
             } else {
-                MainGuiLevel0.dataPanel.createDataVar1(MainGuiLevel0.dataCentreJP0);
-                MainGuiLevel0.control = 0;
-                System.out.println(MainGuiLevel0.control);
+                FrameMainLevel.dataPanel.createDataVar1(FrameMainLevel.dataCentreJP0);
+                FrameMainLevel.control = 0;
+                System.out.println(FrameMainLevel.control);
             }
-            MainGuiLevel0.mainPanel.updateUI();
+            FrameMainLevel.mainPanel.updateUI();
         }
     }
 
