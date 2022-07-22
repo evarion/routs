@@ -67,7 +67,7 @@ public class FrameMainLevel extends JFrame {
         constraints.gridy = 2;
         constraints.gridwidth = 1;
         constraints.gridheight = 1;
-        constraints.weightx = 0.8;
+        constraints.weightx = 0.98;
         constraints.weighty = 0.7;
         dataCentreJP0.setBackground(Color.GRAY.brighter());
         mainPanel.add(dataCentreJP0, constraints);

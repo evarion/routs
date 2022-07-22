@@ -18,7 +18,6 @@ public class FrameDataLevel extends JFrame {
     static boolean rightDataActive = false;
 
 
-
     public void createDataVar0(JPanel jPanel) {
         mainData.remove(rightData);
 
@@ -36,8 +35,8 @@ public class FrameDataLevel extends JFrame {
         jPanel.setLayout(new GridBagLayout());
         constraints.gridx = 0;
         constraints.gridy = 0;
-        constraints.weightx = 1.0;
-        constraints.weighty = 1.0;
+        constraints.weightx = 0.8;
+        constraints.weighty = 0.7;
         jPanel.add(mainData, constraints);
     }
 
@@ -50,29 +49,33 @@ public class FrameDataLevel extends JFrame {
         leftData.setBackground(Color.WHITE);
         constraints.gridx = 0;
         constraints.gridy = 0;
+        constraints.gridwidth = 1;
+        constraints.gridheight = 2;
         constraints.weightx = 0.75;
         constraints.weighty = 1.0;
-        createLeftData();
         mainData.add(leftData, constraints);
 
         rightData.setBackground(Color.LIGHT_GRAY);
         constraints.gridx = 1;
         constraints.gridy = 0;
-        constraints.gridwidth=1;
-        constraints.gridheight=2;
+        constraints.gridwidth = 1;
+        constraints.gridheight = 2;
         constraints.weightx = 0.25;
         constraints.weighty = 1.0;
-        createRightData();
+
+        createRightData1();
         mainData.add(rightData, constraints);
 
-        jPanel.setLayout(new GridBagLayout());
 
+
+
+
+        jPanel.setLayout(new GridBagLayout());
         constraints.gridx = 0;
         constraints.gridy = 0;
-
-        constraints.weightx = 1.0;
-        constraints.weighty = 1.0;
-        jPanel.add(mainData,constraints);
+        constraints.weightx = 0.8;
+        constraints.weighty = 0.7;
+        jPanel.add(mainData, constraints);
     }
 
     public void createLeftData() {
@@ -85,6 +88,7 @@ public class FrameDataLevel extends JFrame {
         constraints.gridy = 0;
         constraints.weightx = 1.0;
         constraints.weighty = 0.03;
+
         leftData.add(leftDataMenu, constraints);
 
         leftDataField.setBackground(Color.WHITE);
@@ -95,42 +99,36 @@ public class FrameDataLevel extends JFrame {
         leftData.add(leftDataField, constraints);
     }
 
-    public void createRightData() {
+    public void createRightData1() {
         rightData.setLayout(new GridBagLayout());
         GridBagConstraints constraints = new GridBagConstraints();
-
         constraints.fill = GridBagConstraints.BOTH;
 
-        rightDataMenu.setBackground(Color.orange);
+        rightDataMenu.setBackground(Color.darkGray);
         constraints.gridx = 0;
         constraints.gridy = 0;
-        constraints.gridwidth=1;
-        constraints.gridheight=1;
         constraints.weightx = 1.0;
-        constraints.weighty = 0.015;
-
+        constraints.weighty = 0.03;
         if (!rightDataActive) {
-            addButtonRightDataMenu();
+            addButtonRightDataMenu(rightDataMenu);
         }
         rightData.add(rightDataMenu, constraints);
 
         rightDataField.setBackground(Color.LIGHT_GRAY);
         constraints.gridx = 0;
         constraints.gridy = 1;
-        constraints.gridwidth=1;
-        constraints.gridheight=1;
         constraints.weightx = 1.0;
-        constraints.weighty = 0.985;
-
+        constraints.weighty = 0.97;
         rightData.add(rightDataField, constraints);
     }
 
-    public static void addButtonRightDataMenu() {
+    public static void addButtonRightDataMenu(JPanel jPanel) {
         rightDataActive = true;
-        rightDataMenu.setLayout(new GridBagLayout());
+        jPanel.setLayout(new GridBagLayout());
         GridBagConstraints constraints = new GridBagConstraints();
         JPanel jPanelEmpty = new JPanel();
         constraints.anchor = GridBagConstraints.WEST;
+
 
         constraints.gridx = buttonsRightDataMenu.length;
 
@@ -139,7 +137,6 @@ public class FrameDataLevel extends JFrame {
             buttonsRightDataMenu[i].setName("jButtonRightMenuTop" + i);
             buttonsRightDataMenu[i].setPreferredSize(new Dimension(20, 20));
             buttonsRightDataMenu[i].setMinimumSize(new Dimension(20, 20));
-
         }
 
 
@@ -148,20 +145,18 @@ public class FrameDataLevel extends JFrame {
 
             constraints.gridx = positionElementButton;
             constraints.gridwidth = 1;
-            constraints.gridy=0;
+            constraints.gridy = 0;
             positionElementButton = positionElementButton + 1;
 
-            constraints.insets.left =5;
+            constraints.insets.left = 5;
             constraints.insets.right = 5;
             constraints.insets.top = 1;
             constraints.insets.bottom = 1;
 
-            rightDataMenu.add(jButton, constraints);
+            jPanel.add(jButton, constraints);
         }
         constraints.weightx = 0.7;
-        rightDataMenu.add(jPanelEmpty, constraints);
+        jPanel.add(jPanelEmpty, constraints);
 
-        //jPanelEmpty.setBackground(Color.ORANGE);
-        //rightDataMenu.add(jPanelEmpty, constraints);
     }
 }
