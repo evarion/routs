@@ -24,8 +24,10 @@ public class ActionButtonListeners {
     static class TestButtonFromAction implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+
             System.out.println("test");
-        }
+            FrameMainLevel.mainPanel.updateUI();
+                 }
     }
 
 
