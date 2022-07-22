@@ -89,6 +89,7 @@ public class FrameMainLevel extends JFrame {
         GridBagConstraints constraints = new GridBagConstraints();
         constraints.anchor = GridBagConstraints.NORTH;
         constraints.weighty = 0.001;
+
         constraints.ipady = 30;
         constraints.insets.top = 10;
 
