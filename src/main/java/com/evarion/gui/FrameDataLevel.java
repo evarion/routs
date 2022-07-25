@@ -107,8 +107,8 @@ public class FrameDataLevel extends JFrame {
         rightDataMenu.setBackground(Color.darkGray);
         constraints.gridx = 0;
         constraints.gridy = 0;
-        constraints.weightx = 1.0;
-        constraints.weighty = 0.03;
+        constraints.weightx = 0.1;
+        constraints.weighty = 0.018;
         if (!rightDataActive) {
             addButtonRightDataMenu(rightDataMenu);
         }
@@ -117,8 +117,8 @@ public class FrameDataLevel extends JFrame {
         rightDataField.setBackground(Color.LIGHT_GRAY);
         constraints.gridx = 0;
         constraints.gridy = 1;
-        constraints.weightx = 1.0;
-        constraints.weighty = 0.97;
+        constraints.weightx = 0.1;
+        constraints.weighty = 0.982;
         rightData.add(rightDataField, constraints);
     }
 
